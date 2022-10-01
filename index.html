@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidljivost elemenata</title>
+    <style>
+        #poruka {
+            background-color: lightgreen;
+            padding: 16px;
+            border: 2px solid darkgreen;
+            position: absolute;
+            top: 10px;
+            left: calc(50vw - 232px);
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <p id="poruka">Ovo je poruka sa tekstom.</p>
+    <button id="sakrij">Sakrij</button>
+    <button id="prikazi">Prikazi</button>
+    <button id="menjaj">Menjaj Vidljivost</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const $p_poruka = $("#poruka")
+        const $btn_sakrij = $("#sakrij")
+        const $btn_prikazi = $("#prikazi")
+        const $btn_menjaj = $("#menjaj")
+
+        /*$btn_sakrij.on('click', () => $p_poruka.hide(4000, ()=> {
+            alert("Poruka je skrivena")
+        } ))*/
+
+        $btn_sakrij.on('click', ()=> $p_poruka.hide(1000))
+        $btn_prikazi.on('click', ()=> $p_poruka.show(1000))
+        $btn_menjaj.on('click', () => $p_poruka.toggle(1000))
+    </script>
+</body>
+</html>
